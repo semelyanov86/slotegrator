@@ -18,7 +18,7 @@ class PrizeSeeder extends Seeder
             [
                 'name' => 'Денежный',
                 'class' => 'App\Services\MoneyPrize',
-                'inventory' => 10,
+                'inventory' => 1000,
                 'key' => 'MONEY',
                 'description' => 'Money'
             ],

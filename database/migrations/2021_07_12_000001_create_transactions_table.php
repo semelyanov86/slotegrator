@@ -18,9 +18,9 @@ class CreateTransactionsTable extends Migration
             $table->integer('value');
             $table->text('description')->nullable();
             $table->unsignedBigInteger('prize_id');
-            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('product_id')->nullable();
             $table->unsignedBigInteger('user_id');
-            $table->dateTime('done_at');
+            $table->dateTime('done_at')->nullable();
 
             $table->timestamps();
             $table->softDeletes();

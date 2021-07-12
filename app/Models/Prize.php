@@ -19,6 +19,7 @@ class Prize extends Model
         'inventory',
         'key',
         'description',
+        'product_id'
     ];
 
     protected $searchableFields = ['*'];
@@ -31,5 +32,16 @@ class Prize extends Model
     public function product()
     {
         return $this->belongsTo(Product::class);
+    }
+
+    public function isActive(): bool
+    {
+        if ($this->inventory === null) {
+            return true;
+        }
+        if ($this->inventory > 0) {
+            return true;
+        }
+        return false;
     }
 }

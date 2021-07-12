@@ -62,36 +62,6 @@ class TransactionTest extends TestCase
     /**
      * @test
      */
-    public function it_updates_the_transaction()
-    {
-        $transaction = Transaction::factory()->create();
-
-        $prize = Prize::factory()->create();
-        $user = User::factory()->create();
-
-        $data = [
-            'value' => $this->faker->randomNumber(0),
-            'description' => $this->faker->sentence(15),
-            'done_at' => $this->faker->dateTime,
-            'prize_id' => $prize->id,
-            'user_id' => $user->id,
-        ];
-
-        $response = $this->putJson(
-            route('api.transactions.update', $transaction),
-            $data
-        );
-
-        $data['id'] = $transaction->id;
-
-        $this->assertDatabaseHas('transactions', $data);
-
-        $response->assertOk()->assertJsonFragment($data);
-    }
-
-    /**
-     * @test
-     */
     public function it_deletes_the_transaction()
     {
         $transaction = Transaction::factory()->create();

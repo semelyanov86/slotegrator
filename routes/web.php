@@ -20,9 +20,8 @@ use App\Http\Controllers\TransactionController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'welcome')->name('welcome');
+Route::post('/bonus', \App\Http\Controllers\GetBonusController::class)->name('bonus');
 
 Route::middleware(['auth:sanctum', 'verified'])
     ->get('/dashboard', function () {

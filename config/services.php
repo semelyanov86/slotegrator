@@ -29,5 +29,24 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'prize' => [
+        'money' => [
+            'min' => 1,
+            'max' => 10,
+            'auto_acceptance' => false,
+            'accept_url' => env('ACCEPT_MONEY_URL', 'https://google.com'),
+            'conversion_rate' => 2
+        ],
+        'bonus' => [
+            'min' => 1,
+            'max' => 10
+        ],
+        'phyzik' => [
+            'min' => 1,
+            'max' => 1,
+            'operator' => 'admin@admin.com',
+            'conversion_rate' => 10
+        ]
+    ]
 
 ];

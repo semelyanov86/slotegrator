@@ -46,6 +46,7 @@ return [
             'value' => 'Value',
             'description' => 'Description',
             'prize_id' => 'Prize',
+            'product_id' => 'Product',
             'user_id' => 'User',
             'done_at' => 'Done At',
         ],

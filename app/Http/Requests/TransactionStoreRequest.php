@@ -27,6 +27,7 @@ class TransactionStoreRequest extends FormRequest
             'value' => ['required', 'numeric'],
             'description' => ['nullable', 'max:255', 'string'],
             'prize_id' => ['required', 'exists:prizes,id'],
+            'product_id' => ['nullable', 'exists:products,id'],
             'user_id' => ['required', 'exists:users,id'],
             'done_at' => ['required', 'date'],
         ];

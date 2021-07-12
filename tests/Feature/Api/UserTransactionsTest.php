@@ -62,7 +62,7 @@ class UserTransactionsTest extends TestCase
             route('api.users.transactions.store', $user),
             $data
         );
-
+        unset($data['product_id']);
         $this->assertDatabaseHas('transactions', $data);
 
         $response->assertStatus(201)->assertJsonFragment($data);
