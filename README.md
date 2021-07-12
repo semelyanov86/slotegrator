@@ -18,5 +18,6 @@ This solution based on Laravel 8 and PHP 8.
 - Run php artisan serve
 - Go to localhost:8000
 - By default login and password is `admin@admin.com` and `password`
+- Command for sending money: `php artisan money:transfer`
 
 System also has an admin panel vis `/dashboard` route where you can manage all data.
