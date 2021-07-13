@@ -46,6 +46,9 @@ final class BonusPrize extends PrizeAbstract implements PrizeInterface
 
     public function acceptTransaction(Transaction $transaction): bool
     {
+        $user = $transaction->user;
+        $user->balance += $transaction->value;
+        $user->save();
         return true;
     }
 }
